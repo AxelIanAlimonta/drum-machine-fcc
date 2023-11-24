@@ -33,12 +33,11 @@ function App() {
 
   return (
     <div id="drum-machine">
-      <audio src="./audio/Heater1.mp3"></audio>
       <div className="padContainer">
-        <DrumPad src={Heater1} idBtn="Q" idCancion={"Heater1"} />
-        <DrumPad src={Heater2} idBtn="W" idCancion={"Heater2"} />
-        <DrumPad src={Heater3} idBtn="E" idCancion={"Heater3"} />
-        <DrumPad src={Heater4} idBtn="A" idCancion={"Heater4"} />
+        <DrumPad src={Heater1} idBtn="Q" idCancion={"Heater 1"} />
+        <DrumPad src={Heater2} idBtn="W" idCancion={"Heater 2"} />
+        <DrumPad src={Heater3} idBtn="E" idCancion={"Heater 3"} />
+        <DrumPad src={Heater4} idBtn="A" idCancion={"Heater 4"} />
         <DrumPad src={Clap} idBtn="S" idCancion={"Clap"} />
         <DrumPad src={OpenHH} idBtn="D" idCancion={"Open-HH"} />
         <DrumPad src={KicknHat} idBtn="Z" idCancion={"Kick-n'-Hat"} />
