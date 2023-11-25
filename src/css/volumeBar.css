@@ -1,0 +1,116 @@
+#volume-container {
+  width: 200px;
+  margin: 20px;
+}
+
+#volume-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  position: relative;
+}
+
+#volume-level {
+  height: 100%;
+  background-color: #4caf50;
+  width: 50%; /* Initial volume level (you can set it to any value between 0 and 100) */
+}
+
+.volume-p {
+    color: var(--color4);
+}
+
+.volume-bar{
+    background-color: var(--color3);
+}
+
+.volume-bar {
+    height: 38px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+  .volume-bar:focus {
+    outline: none;
+  }
+  .volume-bar::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #0C7B4D;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  .volume-bar::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 13px;
+    border-radius: 5px;
+    background: #F58E31;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -11px;
+  }
+  .volume-bar:focus::-webkit-slider-runnable-track {
+    background: #0C7B4D;
+  }
+  .volume-bar::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #0C7B4D;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  .volume-bar::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 13px;
+    border-radius: 5px;
+    background: #F58E31;
+    cursor: pointer;
+  }
+  .volume-bar::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  .volume-bar::-ms-fill-lower {
+    background: #0C7B4D;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+  }
+  .volume-bar::-ms-fill-upper {
+    background: #0C7B4D;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+  }
+  .volume-bar::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 13px;
+    border-radius: 5px;
+    background: #F58E31;
+    cursor: pointer;
+  }
+  .volume-bar:focus::-ms-fill-lower {
+    background: #0C7B4D;
+  }
+  .volume-bar:focus::-ms-fill-upper {
+    background: #0C7B4D;
+  }
+  

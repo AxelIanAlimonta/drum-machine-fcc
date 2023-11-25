@@ -14,10 +14,12 @@ import OpenHH from "./audio/Open-HH.mp3";
 import KicknHat from "./audio/Kick-n'-Hat.mp3";
 import Kick from "./audio/Kick.mp3";
 import ClosedHH from "./audio/Closed-HH.mp3";
+import VolumeBar from "./components/VolumeBar";
 
 function App() {
   const [txtDisplay, setTxtDisplay] = useState("");
   const [powerOn, setPowerOn] = useState(true);
+  const [volumeValue, setVolumeValue] = useState(1);
 
   useEffect(() => {
     function keyDownHandler(e) {
@@ -35,8 +37,13 @@ function App() {
   function playSound(idBtn, idCancion) {
     if (!powerOn) return;
     let sound = document.getElementById(`${idBtn}`);
+    sound.volume = volumeValue;
     sound.play();
     setTxtDisplay(`${idCancion}`);
+  }
+
+  function handleChangeVolume(e) {
+    setVolumeValue(e.target.value);
   }
 
   return (
@@ -91,7 +98,8 @@ function App() {
         <div id="display" className="options-display">
           {txtDisplay}
         </div>
-        <ToggleSwitch onClick={()=>setPowerOn(!powerOn)} />
+        <ToggleSwitch onClick={() => setPowerOn(!powerOn)} />
+        <VolumeBar onInput={handleChangeVolume} />
       </div>
     </div>
   );
