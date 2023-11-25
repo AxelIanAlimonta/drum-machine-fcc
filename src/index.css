@@ -1,11 +1,19 @@
-*{
-    box-sizing: border-box;
+:root {
+  --color1: #f5ac31;
+  --color2: #f58e31;
+  --color3: #f1da85;
+  --color4: #0c7b4d;
 }
 
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color1);
 }

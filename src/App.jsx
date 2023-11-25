@@ -20,10 +20,10 @@ function App() {
 
   useEffect(() => {
     function keyDownHandler(e) {
-      let audio = document.getElementById(`${e.key.toUpperCase()}`);
+      let key = `${e.key.toUpperCase()}`;
+      let audio = document.getElementById(key);
       if (audio) {
-        audio.play();
-        setTxtDisplay(audio.parentNode.id);
+        playSound(key, audio.parentNode.id);
       }
     }
 
@@ -31,18 +31,59 @@ function App() {
     return () => document.removeEventListener("keydown", keyDownHandler);
   }, []);
 
+  function playSound(idBtn, idCancion) {
+    let sound = document.getElementById(`${idBtn}`);
+    sound.play();
+    setTxtDisplay(`${idCancion}`);
+  }
+
   return (
     <div id="drum-machine">
       <div className="padContainer">
-        <DrumPad src={Heater1} idBtn="Q" idCancion={"Heater 1"} />
-        <DrumPad src={Heater2} idBtn="W" idCancion={"Heater 2"} />
-        <DrumPad src={Heater3} idBtn="E" idCancion={"Heater 3"} />
-        <DrumPad src={Heater4} idBtn="A" idCancion={"Heater 4"} />
-        <DrumPad src={Clap} idBtn="S" idCancion={"Clap"} />
-        <DrumPad src={OpenHH} idBtn="D" idCancion={"Open-HH"} />
-        <DrumPad src={KicknHat} idBtn="Z" idCancion={"Kick-n'-Hat"} />
-        <DrumPad src={Kick} idBtn="X" idCancion={"Kick"} />
-        <DrumPad src={ClosedHH} idBtn="C" idCancion={"Closed-HH"} />
+        <DrumPad
+          src={Heater1}
+          idBtn="Q"
+          onClick={playSound}
+          idCancion={"Heater 1"}
+        />
+        <DrumPad
+          src={Heater2}
+          idBtn="W"
+          onClick={playSound}
+          idCancion={"Heater 2"}
+        />
+        <DrumPad
+          src={Heater3}
+          idBtn="E"
+          onClick={playSound}
+          idCancion={"Heater 3"}
+        />
+        <DrumPad
+          src={Heater4}
+          idBtn="A"
+          onClick={playSound}
+          idCancion={"Heater 4"}
+        />
+        <DrumPad src={Clap} idBtn="S" onClick={playSound} idCancion={"Clap"} />
+        <DrumPad
+          src={OpenHH}
+          idBtn="D"
+          onClick={playSound}
+          idCancion={"Open-HH"}
+        />
+        <DrumPad
+          src={KicknHat}
+          idBtn="Z"
+          onClick={playSound}
+          idCancion={"Kick-n'-Hat"}
+        />
+        <DrumPad src={Kick} idBtn="X" onClick={playSound} idCancion={"Kick"} />
+        <DrumPad
+          src={ClosedHH}
+          idBtn="C"
+          onClick={playSound}
+          idCancion={"Closed-HH"}
+        />
       </div>
       <div className="options">
         <div id="display" className="options-display">
