@@ -17,6 +17,7 @@ import ClosedHH from "./audio/Closed-HH.mp3";
 
 function App() {
   const [txtDisplay, setTxtDisplay] = useState("");
+  const [powerOn, setPowerOn] = useState(true);
 
   useEffect(() => {
     function keyDownHandler(e) {
@@ -29,9 +30,10 @@ function App() {
 
     document.addEventListener("keydown", keyDownHandler);
     return () => document.removeEventListener("keydown", keyDownHandler);
-  }, []);
+  });
 
   function playSound(idBtn, idCancion) {
+    if (!powerOn) return;
     let sound = document.getElementById(`${idBtn}`);
     sound.play();
     setTxtDisplay(`${idCancion}`);
@@ -89,7 +91,7 @@ function App() {
         <div id="display" className="options-display">
           {txtDisplay}
         </div>
-        <ToggleSwitch />
+        <ToggleSwitch onClick={()=>setPowerOn(!powerOn)} />
       </div>
     </div>
   );

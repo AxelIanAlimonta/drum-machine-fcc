@@ -1,12 +1,17 @@
 import "../css/ToggleSwitch.css";
+import PropTypes from "prop-types";
 
-const ToggleSwitch = () => {
+const ToggleSwitch = ({ onClick }) => {
   return (
-    <label className="switchBtn">
+    <label className="switchBtn" >
       <input type="checkbox" />
-      <div className="slide round"><span id="txtPwrBtn">Power</span></div>
+      <div className="slide round" onClick={onClick}>
+        <span id="txtPwrBtn">Power</span>
+      </div>
     </label>
   );
 };
-
+ToggleSwitch.propTypes = {
+  onClick: PropTypes.func,
+};
 export default ToggleSwitch;
