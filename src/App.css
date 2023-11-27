@@ -7,6 +7,9 @@
   gap: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: var(--color3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .padContainer {
@@ -34,4 +37,8 @@
   align-items: center;
   background-color: var(--color2);
   color: white;
+}
+
+* {
+  user-select: none;
 }
